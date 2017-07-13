@@ -31,3 +31,7 @@ the necessary tools.
 3. run lotsofmenus.py to populate the database
 
 4. run python ./webserver.py
+
+herokuapp
+-----------------
+http://silva-app.herokuapp.com/catalog
