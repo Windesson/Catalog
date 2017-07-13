@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+{% block content %}
+ <div class = 'box item-row-1'>
+  <h1>{{menuitem.title}}</h1>
+   <p> Description: {{menuitem.description}} </p>
+   {% if creator %}
+   <table>
+    <tr>
+      <th> <a href='{{url_for('editMenuItem', category = category, item = menuitem.title) }}'>Edit</a> </th>
+      <th class = 'itembar'><th>
+      <th> <a href = '{{url_for('deleteMenuItem', category = category, item = menuitem.title) }}'>Delete</a> </th>
+     <tr>
+   </table>
+   {% endif %}
+  </div>
+{% endblock %}

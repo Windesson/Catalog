@@ -1,0 +1,97 @@
+.container {
+  	display: block;
+    max-width: 100%;
+    background: gainsboro;
+}
+
+.row-1 {
+  display: flex;
+  flex-wrap: wrap;
+  align-content: center;
+  margin-left: auto;
+  margin-right: auto;
+  background: white;
+  width: 750px;
+  max-width: 100%;
+  margin-top: 25px;
+}
+
+.topnav-inner {
+  align-content: center;
+  margin-left: auto;
+  margin-right: auto;
+  width: 750px;
+  max-width: 100%;
+}
+
+.col-1,
+.col-2 {
+  width: 50%;
+}
+
+.col-1-row-1,
+.col-2-row-1,
+.item-row-1 {
+    margin-left: 16px;
+    margin-bottom: 16px;
+}
+
+.col-1-row-1,
+.itembar {
+  border-right: 2px solid black;
+  border-color: #f5f7f7;
+}
+
+i {
+    margin-bottom: 0px;
+    font-family: "Cuprum", sans-serif;
+    color: #7d97ad;
+    font-weight: 100;
+    font-size: small;
+}
+
+a {
+  color: red;
+  text-decoration: none;
+}
+
+.topnav {
+  overflow: hidden;
+  background-color: #252550;
+}
+
+h1 {
+  color: #252550;
+}
+.topnav a {
+  float: left;
+  display: block;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+}
+
+.topnav a:hover {
+  background-color: #ddd;
+  color: black;
+}
+
+.topnav a.active {
+    background-color: #326075;
+    color: white;
+}
+
+.topnav a.logging {
+  float: right;
+  background: red;
+  margin-top: 10px;
+  margin-right: 10px;
+  margin-bottom: 10px;
+  padding: 2px 5px;
+}
+
+.flash {
+  background: #cee5F5;
+}

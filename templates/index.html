@@ -1,0 +1,32 @@
+{% extends "base.html" %}
+{% block content %}
+
+<div class = 'box col-1'>
+  <div class="box col-1-row-1">
+    <h1>Categoties</h1>
+      {% for c in categories %}
+      <a href='{{url_for('categoryItem', category = c.name) }}'>{{c.name}}</a>
+      </br>
+    {% endfor %}
+  </div>
+</div>
+
+<div class = 'box col-2'>
+  <div class="box col-2-row-1">
+    {% if categoryname %}
+    <h1> {{categoryname}} Items ({{items|length }} items)</h1>
+    {% else %}
+    <h1> Latest Items </h1>
+    {%endif%}
+    {% for i in items %}
+       <a href='{{url_for('categoryItemDetail', category = i.category.name, item = i.title) }}'>{{i.title}}</a>
+       <!-- If no in specific category, display items category name -->
+       {% if not categoryname %}
+       <i>({{i.category.name}})</i>
+       {% endif %}
+       </br>
+    {% endfor %}
+ </div>
+</div>
+
+{% endblock %}

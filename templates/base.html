@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+ <head>
+  <title>Catalog App</title>
+  <meta charset="utf-8">
+  <link rel="stylesheet" type="text/css" href="{{url_for('static',filename='styles.css')}}">
+  <meta name="viewport" content="width=device-width, minimum-scale=1.0, initial-scale=1.0, user-scalable=yes">
+  <!--LOAD PRE-REQUISITES FOR GOOGLE SIGN IN -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js">
+  </script>
+  <script src="https://apis.google.com/js/platform.js?onload=start"> </script>
+  <!--LOAD PRE-REQUISITES FOR GOOGLE SIGN IN -->
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js">  </script>
+  <script src="//apis.google.com/js/platform.js?onload=start"> </script>
+  <!-- END PRE-REQUISITES FOR GOOGLE SIGN IN -->
+ </head>
+
+ <body class="container" >
+  <nav>
+   <div class="topnav">
+    <div class="topnav-inner">
+    <a class="{{navhome|default("")}}" href="{{url_for('catalogMenu')}}">Home</a>
+    <a href="{{url_for('catalogJSON') }}">JSON</a>
+    {% if 'username' not in session %}
+    <a class="logging" href="{{url_for('showLogin')}}">Login</a>
+    {% else %}
+    <a class="{{navadd|default("")}}" href="{{url_for('addMenuItem')}}">Add Item</a>
+    <a class="{{navuser|default("")}}" href="{{url_for('userProfile') }}">My Profile</a>
+    <a class="logging" href="{{url_for('gdisconnect')}}">Logout</a>
+    {% endif %}
+    </div>
+   </div>
+  </nav>
+  <article>
+   <div class = 'flash'>
+    <!--MESSAGE FLASHING EXAMPLE -->
+    {% with messages = get_flashed_messages() %}
+     {% if messages %}
+      <ul>
+       {% for message in messages %}
+        <li><strong>{{message}}</strong></li>
+       {% endfor %}
+      </ul>
+     {% endif %}
+    {% endwith %}
+   </div>
+   <!-- CONTENT  -->
+   <div class = 'row-1'>
+    {% block content %}
+    {% endblock %}
+   </div>
+  </article>
+ </body>
+ <fotter>
+
+</html>

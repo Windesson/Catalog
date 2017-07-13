@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+{% block content %}
+
+<div class="item-row-1">
+  <h1>Delete Item</h1>
+  <p>Are you sure you want to delete the following item?</p>
+  <p>item: <b>{{item}}</b></p>
+  <p>from category: {{category}}</p>
+  <form action="{{url_for('deleteMenuItem', category=category, item=item)}}" method="post">
+    <input type="submit" value="Submit">
+  </form>
+</div>
+
+{% endblock %}

@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+{% block content %}
+
+<div class = 'box col-1'>
+  <h1>Welcome, {{session['username']}} </h1>
+  <img src="{{session['picture']}}" style = "width: 300px; height: 300px;border-radius: 150px;-webkit-border-radius: 150px;-moz-border-radius: 150px;">
+</div>
+<div class = 'box col-2'>
+  <h1>My Items ({{items|length }} items) </h1>
+  {% for i in items %}
+    <a href='{{url_for('categoryItemDetail', category = i.category.name, item = i.title) }}'>{{i.title}}</a>
+    <br>
+  {% endfor %}
+</div>
+
+{% endblock %}

@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+{% block content %}
+
+<div class = 'box item-row-1'>
+ <h1>Add Item</h1>
+ <form method = 'POST'>
+ <p>Title</p>
+  <input type='text' size='30' name='title' required
+   value='{{title|default("Title here")}}'>
+  <p>Description</p>
+  <textarea name='description' cols="50" rows="10" required
+   placeholder = "Something about the item.">{{description}}</textarea>
+  <p>Category</p>
+  <select name="category">
+    {% for c in categories %}
+     {% if c.name == target|default("") %}
+      <option value="{{c.name}}" selected >{{c.name}}</option>
+     {% else %}
+      <option value="{{c.name}}">{{c.name}}</option>
+     {% endif %}
+    {% endfor %}
+  <option value="notvalidcategory">notvalidcategory</option>
+ </select>
+ <br>
+ <input type='submit' value='Submit'>
+</form>
+
+</div>
+
+{% endblock %}
