@@ -14,7 +14,13 @@
 <div class = 'box col-2'>
   <div class="box col-2-row-1">
     {% if categoryname %}
-    <h1> {{categoryname}} Items ({{items|length }} items)</h1>
+    <h1> {{categoryname}} Items 
+       {% if items %}
+        ({{items|length }} items)
+        {% else %}
+        (0 items )
+        {% endif %}
+    </h1>
     {% else %}
     <h1> Latest Items </h1>
     {%endif%}
