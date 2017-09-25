@@ -9,7 +9,12 @@ to post, edit, and delete their own items.
 Getting Started
 ----------------------
 Install Vagrant and VirtualBox if you have not done so already.
-Clone the git@github.com:Windesson/fullstack-nanodegree-vm.git repository.
+
+    1 - git clone git@github.com:Windesson/fullstack-nanodegree-vm.git repository.
+    2 - cd /fullstack-nanodegree-vm/vagrant
+    3 - vagrant up.
+    4 - ssh localhost:2222
+    5 - user: vagrant, password: vagrant
 
 Fetch the Source Code and VM Configuration
 ------------------------------------------
@@ -24,13 +29,17 @@ This will give you a directory named catalog complete with the source code for t
 flask application, a vagrantfile, and a pg_config.sh file for installing all of
 the necessary tools.
 
-1. run sudo ./pg_config.sh
+From /fullstack-nanodegree-vm/vagrant/catalog
 
-2. run database_setup.py to create the database
+    1. run sudo ./pg_config.sh
 
-3. run lotsofmenus.py to populate the database
+    2. run database_setup.py to create the database (if catalogmenu.db file is missing )
 
-4. run python ./webserver.py
+    3. run lotsofmenus.py to populate the database  (if catalogmenu.db file is missing )
+
+    4. run python ./webserver.py
+    
+    5. Navegate to http://localhost:8000/
 
 herokuapp
 -----------------
