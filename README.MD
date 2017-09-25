@@ -39,7 +39,7 @@ From /fullstack-nanodegree-vm/vagrant/catalog
 
     4. run python ./webserver.py
     
-    5. Navegate to http://localhost:8000/
+    5. Navigate to http://localhost:8000/
 
 herokuapp
 -----------------
